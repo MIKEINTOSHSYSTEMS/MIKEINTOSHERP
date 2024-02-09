@@ -181,7 +181,7 @@ ARG DBNAME
 ARG SERVER_WIDE_MODULES
 
 ENV \
-    ADMIN_PASSWORD=${ADMIN_PASSWORD:-my-weak-password} \
+    ADMIN_PASSWORD=${ADMIN_PASSWORD:-merqconsultancyhqadmin} \
     ODOO_DATA_DIR=${ODOO_DATA_DIR:-/var/lib/odoo/data} \
     DB_PORT_5432_TCP_ADDR=${PGHOST:-db} \
     DB_MAXCONN=${DB_MAXCONN:-64} \
