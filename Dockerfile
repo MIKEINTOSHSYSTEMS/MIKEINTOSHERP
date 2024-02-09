@@ -112,7 +112,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Install Odoo source code and install it as a package inside the container with additional tools
-ENV ODOO_VERSION ${ODOO_VERSION:-15.0}
+ENV ODOO_VERSION ${ODOO_VERSION:-16.0}
 
 RUN pip3 install --prefix=/usr/local --no-cache-dir --upgrade --requirement https://raw.githubusercontent.com/odoo/odoo/${ODOO_VERSION}/requirements.txt \
     && pip3 -qq install --prefix=/usr/local --no-cache-dir --upgrade \
@@ -181,7 +181,7 @@ ARG DBNAME
 ARG SERVER_WIDE_MODULES
 
 ENV \
-    ADMIN_PASSWORD=${ADMIN_PASSWORD:-merqconsultancyhqadmin} \
+    ADMIN_PASSWORD=${ADMIN_PASSWORD:-my-weak-password} \
     ODOO_DATA_DIR=${ODOO_DATA_DIR:-/var/lib/odoo/data} \
     DB_PORT_5432_TCP_ADDR=${PGHOST:-db} \
     DB_MAXCONN=${DB_MAXCONN:-64} \

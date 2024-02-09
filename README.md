@@ -1,4 +1,4 @@
-# Dockerized Odoo Based ERP System
+# Dockerized Odoo
 
 This is a flexible and **streamlined** version of most dockerized Odoo projects that you'll find. And one that allows you to deploy with two different methods using the same Dockerfile:
 
@@ -16,15 +16,15 @@ To use the **hosted** approach, the Odoo code must be in the `./src` directory, 
 ### Standalone
 
 ```shell
-git clone -b 15.0 git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
+git clone -b 16.0 git@git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
 docker-compose up
 ```
 
 ### Hosted
 
 ```shell
-git clone -b 15.0 git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
-git clone --depth=1 -b 15.0 git@github.com:odoo/odoo.git src/odoo
+git clone -b 16.0 git@git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
+git clone --depth=1 -b 16.0 git@github.com:odoo/odoo.git src/odoo
 docker-compose -f docker-compose.yml -f hosted.yml
 ```
 
@@ -33,15 +33,15 @@ docker-compose -f docker-compose.yml -f hosted.yml
 #### Standalone development
 
 ```shell
-git clone -b 15.0 git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
+git clone -b 16.0 git@git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
 docker-compose -f docker-compose.yml -f dev-standalone.yml up
 ```
 
 #### Hosted development
 
 ```shell
-git clone -b 15.0 git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
-git clone --depth=1 -b 15.0 git@github.com:odoo/odoo.git src/odoo
+git clone -b 16.0 git@git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git && cd MIKEINTOSHERP
+git clone --depth=1 -b 16.0 git@github.com:odoo/odoo.git src/odoo
 docker-compose -f docker-compose.yml -f dev-hosted.yml up
 ```
 
@@ -51,7 +51,7 @@ To use this docker compose file you should comply with this requirements:
 
 * Install [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows/Mac or [Docker Engine](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce) for Linux  
 * Install [docker-compose](https://docs.docker.com/compose/install/) (This is installed by default on Windows and Mac with Docker installation)
-* clone this repository `git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git`
+* clone this repository `git@git@github.com:MIKEINTOSHSYSTEMS/MIKEINTOSHERP.git`
 
 ## Running options
 

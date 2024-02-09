@@ -14,7 +14,6 @@ volumes:
 
 services:
   odoo:
-    #image: iterativodo/dockerdoo:${ODOO_VERSION}
     image: odoo:${ODOO_VERSION}
     env_file: .env
     
