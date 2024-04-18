@@ -10,7 +10,7 @@ services:
       # This is not the default for VSContainers as it's too slow on PC and Mac
       # because of Docker's hosted volumes performance
       #
-      # - ./custom:${ODOO_EXTRA_ADDONS}:delegated
+      - ./custom:${ODOO_EXTRA_ADDONS}:delegated
     depends_on: ["db"]
     environment:
       - PIP_AUTO_INSTALL=1

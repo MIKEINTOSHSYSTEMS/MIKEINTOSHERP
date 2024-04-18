@@ -142,7 +142,7 @@ RUN git clone --depth 100 -b ${ODOO_VERSION} https://github.com/odoo/odoo.git /o
 FROM base as production
 
 # PIP auto-install requirements.txt (change value to "1" to auto-install)
-ENV PIP_AUTO_INSTALL=${PIP_AUTO_INSTALL:-"0"}
+ENV PIP_AUTO_INSTALL=${PIP_AUTO_INSTALL:-"1"}
 
 # Run tests for all the modules in the custom addons
 ENV RUN_TESTS=${RUN_TESTS:-"0"}

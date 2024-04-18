@@ -1,0 +1,72 @@
+version: "3.7"
+
+networks:
+  default:
+    #external:
+      name: cloudbuild
+  odoonet:
+
+volumes:
+  odoo-data:
+  odoo-testlogs:
+  odoo-modules:
+  psql:
+
+services:
+  odoo:
+    image: odoo:${ODOO_VERSION} #image: iterativodo/dockerdoo:${ODOO_VERSION}
+    env_file: .env
+    restart: unless-stopped
+    ports: 
+      - "8069:8069"
+      - "8072:8072"
+    volumes:
+      # Host paths (.ssh configuration)
+      - ~/.ssh/:/opt/odoo/.ssh/:cached
+      # Named volumes
+      - odoo-data:${ODOO_DATA_DIR}
+      - odoo-testlogs:${ODOO_LOGS_DIR}
+      - ./custom:${ODOO_EXTRA_ADDONS}:delegated
+    environment:
+      - LOG_LEVEL=debug
+      - WITHOUT_DEMO=False
+      - WDB_SOCKET_SERVER=wdb
+      - WDB_NO_BROWSER_AUTO_OPEN=True
+      - WDB_WEB_PORT=1984
+      - DEBUGPY_ENABLE=1
+    depends_on: 
+      - db
+      - wdb
+    command: ["odoo", "--dev", "wdb,reload,qweb,werkzeug,xml"]
+    networks:
+      - odoonet
+
+  wdb:
+    image: kozea/wdb:3.3.0
+    ports: 
+      - "1984:1984"
+    restart: unless-stopped
+    networks:
+      - odoonet
+    depends_on: 
+      - db
+
+  db:
+    image: postgres:${PSQL_VERSION}
+    restart: unless-stopped
+    volumes:
+      - psql:/var/lib/postgresql/data/pgdata
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - odoonet
+
+  install-dependencies:
+    build:
+      context: .
+      dockerfile: Dockerfile.dependencies
+    volumes:
+      - ./requirements.txt:/app/requirements.txt
