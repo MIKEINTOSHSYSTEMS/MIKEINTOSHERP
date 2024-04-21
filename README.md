@@ -114,7 +114,7 @@ your-project/
  ├── config/
  │   └── odoo.conf      # Hosted configuration file for hosted environment
  ├── custom/            # Custom modules goes here, same level hierarchy **REQUIRED**
- │   ├── iterativo/
+ │   ├── MIKEINTOSHSYSTEMS/
  │   ├── OCA/
  │   ├── enterprise/
  │   └── /
