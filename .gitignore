@@ -1,5 +1,5 @@
 #added entrypoint.sh file exception
-!./resources/entrypoint.sh
+#!./resources/entrypoint.sh
 
 # Odoo testlogs & chrome test screencasts / screenshots
 _testlogs/
@@ -10,7 +10,7 @@ _testlogs/
 !/src/**/
 !/src/**/.gitkeep
 .gitmodules
-*.sh
+#*.sh
 
 # Created by https://www.gitignore.io/api/test,macos,linux,python,windows,pycharm,virtualenv,sublimetext,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=test,macos,linux,python,windows,pycharm,virtualenv,sublimetext,visualstudiocode
