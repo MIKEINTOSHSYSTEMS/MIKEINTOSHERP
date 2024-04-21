@@ -1,4 +1,4 @@
-# Dockerized Odoo
+# MIKEINTOSHERP Dockerized Odoo
 
 This is a flexible and **streamlined** version of most dockerized Odoo projects that you'll find. And one that allows you to deploy with two different methods using the same Dockerfile:
 
