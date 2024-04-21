@@ -1,3 +1,6 @@
+#added entrypoint.sh file exception
+/resources/entrypoint.sh
+
 # Odoo testlogs & chrome test screencasts / screenshots
 _testlogs/
 
