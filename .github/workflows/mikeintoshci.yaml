@@ -3,7 +3,7 @@ name: Unit Tests
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the workflow on
+      - main  # Change this to the branch you want to trigger the workflow on repo
       - "[0-9]+.0"
       - "[0-9]+.0-*"
     paths:
