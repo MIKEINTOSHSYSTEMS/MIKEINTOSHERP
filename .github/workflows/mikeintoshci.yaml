@@ -13,6 +13,7 @@ on:
 
 env:
   HUB_BASE: mikeintosh
+  GITHUB_REPOSITORY_NAME_PART_SLUG: mikeintosherp
 
 jobs:
   build:
@@ -119,3 +120,5 @@ jobs:
 
       - name: Push Docker Image
         run: docker push ${{ env.HUB_BASE }}/${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG }}:sha-${{ env.GITHUB_SHA_SHORT }}
+        #docker push mikeintosh/mikeintosherp:tagname
+        #run: docker push mikeintosh/mikeintosherp:sha-${{ env.GITHUB_SHA_SHORT }}
